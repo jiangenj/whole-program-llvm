@@ -303,6 +303,7 @@ def linkFiles(pArgs, fileNames):
         return incrementallyLinkFiles(pArgs, fileNames)
 
     linkCmd.extend(fileNames)
+    _logger.info('linkCmd: %s', ' '.join(linkCmd))
     exitCode = executeLinker(linkCmd)
     _logger.info('%s returned %s', pArgs.llvmLinker, str(exitCode))
     return exitCode
